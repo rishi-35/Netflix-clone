@@ -40,7 +40,7 @@ const WatchPage = () => {
 		const getSimilarContent = async () => {
 			try {
 				const res = await axios.get(`/api/v1/${contentType}/${id}/similar`);
-				console.log(res);
+	
 				setSimilarContent(res.data.content);
 			} catch (error) {
 				if (error.message.includes("404")) {

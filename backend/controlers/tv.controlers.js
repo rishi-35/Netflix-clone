@@ -3,7 +3,7 @@ const fetchTMDB = require("../services/tmdb.service");
 async function getTrendingTv(req,res) {
     try {
         const data = await fetchTMDB("https://api.themoviedb.org/3/trending/tv/day?language=en-US");
-        console.log(data);
+
         const randomTrendingtv=data.results[Math.floor(Math.random()*data.results?.length)]
        return  res.json({sucess:true,content:randomTrendingtv})
     } catch (error) {

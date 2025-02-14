@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
-console.log("thisi is testing",process.env.jwt_secret);
+
 module.exports={
     PORT : process.env.PORT || 5000,
     NODE_ENV:process.env.NODE_ENV,

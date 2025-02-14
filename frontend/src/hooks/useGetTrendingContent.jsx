@@ -18,7 +18,6 @@ const useGetTrendingContent = () => {
         const res = await axios.get(`/api/v1/${contentType}/trending`, {
           signal: controller.signal, // Pass the signal to Axios
         });
-        console.log(res.data.content);
         setTrendingContent(res.data.content);
       } catch (err) {
         if (err.name === "CanceledError") {

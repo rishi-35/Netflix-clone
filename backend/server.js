@@ -1,11 +1,13 @@
-const dotenv = require('dotenv');
-const result = dotenv.config();
-
-if (result.error) {
-  console.error('Error loading .env file:', result.error);
-} else {
-  console.log('.env file loaded successfully');
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = require('dotenv');
+  const result = dotenv.config();
+  if (result.error) {
+    console.error('Error loading .env file:', result.error);
+  } else {
+    console.log('.env file loaded successfully');
+  }
 }
+
 const express= require("express")
 const app=express();
 const authRoute=require('./routes/auth.routs.js');
